@@ -1,0 +1,67 @@
+{
+  "siteName": "Grand Slam Fitness",
+  "url": "https://grandslamfitness.co.in/",
+  "scrapeDate": "2026-04-24",
+  "title": "Grand Slam Fitness | Unlock Your Fitness Potential",
+  "description": "Discover premium fitness equipment at Grand Slam Fitness, India's leading destination for commercial and outdoor fitness, sports science, and rehabilitation.",
+  "themeColor": "#F47A21",
+  "author": "Grand Slam Fitness",
+  "language": "en",
+  "keywords": [
+    "commercial gym equipment",
+    "commercial gym",
+    "fitness equipment",
+    "gym equipment in india",
+    "outdoor gym",
+    "sports science and rehabilitation",
+    "open gym manufacturer",
+    "wattbike",
+    "treadmills",
+    "elliptical",
+    "rowing machine"
+  ],
+  "socialMedia": {
+    "facebook": "https://www.facebook.com/grandslamindia",
+    "instagram": "https://www.instagram.com/grandslamfitnessequipment/",
+    "linkedin": "https://www.linkedin.com/company/grandslamfitness",
+    "youtube": "https://www.youtube.com/channel/UCvU1CvVtVSft9-nYMXeri8g",
+    "whatsapp": "https://api.whatsapp.com/send?phone=919911128882"
+  },
+  "contact": {
+    "address": "E-540, Greater Kailash II, New Delhi - 110048, Delhi",
+    "phone": "+91-9911128882",
+    "email": "info@grandslamfitness.co.in"
+  },
+  "pages": [
+    "https://grandslamfitness.co.in/",
+    "https://grandslamfitness.co.in/about",
+    "https://grandslamfitness.co.in/products",
+    "https://grandslamfitness.co.in/products/commercial-fitness",
+    "https://grandslamfitness.co.in/products/sports-science-and-rehabilitation",
+    "https://grandslamfitness.co.in/products/open-gym-and-outdoor",
+    "https://grandslamfitness.co.in/brands",
+    "https://grandslamfitness.co.in/franchise/turbuster",
+    "https://grandslamfitness.co.in/franchise/fit-india-trust",
+    "https://grandslamfitness.co.in/franchise/turbuster-and-fit-india-trust",
+    "https://grandslamfitness.co.in/contact",
+    "https://grandslamfitness.co.in/shop",
+    "https://grandslamfitness.co.in/catalogs",
+    "https://grandslamfitness.co.in/blog",
+    "https://grandslamfitness.co.in/careers",
+    "https://grandslamfitness.co.in/legal",
+    "https://grandslamfitness.co.in/legal/privacy-policy",
+    "https://grandslamfitness.co.in/legal/terms-of-use"
+  ],
+  "brands": [
+    "Landice", "Teca", "Marpo", "TRUE Fitness", "Octane", "Turbuster",
+    "SportsArt", "Wattbike", "TuffStuff", "XPT", "TecnoBody", "H2O For Fitness",
+    "Lite", "Boost Treadmills", "Training Wall", "Fitlight",
+    "Altitude Training Systems", "Motio STT Systems", "ErgoFit",
+    "Kinvent", "Physiomed", "Proxomed", "Gym Aware", "Gpexe"
+  ],
+  "files": {
+    "screenshot": "screenshot-homepage.png",
+    "content": "conteudo.md",
+    "metadata": "metadata.json"
+  }
+}
