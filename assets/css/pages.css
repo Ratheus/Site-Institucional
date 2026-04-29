@@ -290,6 +290,14 @@
 }
 .invest-card p { font-size: 0.85rem; margin-top: 0.35rem; }
 
+/* Último card sozinho na linha do grid de unidades */
+.unidades-full-grid .unidade-full-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: 640px;
+  margin-inline: auto;
+  width: 100%;
+}
+
 /* RESPONSIVE páginas internas */
 @media (max-width: 1024px) {
   .modalidades-grid { grid-template-columns: repeat(2, 1fr); }

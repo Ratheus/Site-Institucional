@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
-  <link rel="stylesheet" href="../assets/css/style.css" />
-  <link rel="stylesheet" href="../assets/css/pages.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/pages.css" />
 </head>
 <body>
   <nav class="nav" id="nav">
@@ -29,7 +29,7 @@
       <button class="nav__burger" id="navBurger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true" role="dialog">
     <ul>
       <li><a href="/" class="nav__link">Home</a></li>
       <li><a href="/sobre/" class="nav__link">Sobre</a></li>
@@ -101,9 +101,6 @@
             <a href="https://wa.me/5511999406548?text=Quero%20saber%20mais%20sobre%20a%20unidade%20Paula%20Ferreira" class="btn btn--accent" target="_blank" rel="noopener noreferrer" id="ctaPaula"><i class="ph ph-whatsapp-logo"></i>Falar sobre esta unidade</a>
           </div>
         </article>
-      </div>
-      <!-- CT Taipas — centralizado -->
-      <div style="max-width:640px; margin:1.5rem auto 0;">
         <article class="unidade-full-card reveal" id="ct-taipas">
           <div class="unidade-full-card__img"><img src="https://picsum.photos/seed/tntfit-u5/700/400" alt="CT Taipas" loading="lazy" /></div>
           <div class="unidade-full-card__body">
@@ -159,6 +156,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/main.js"></script>
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>

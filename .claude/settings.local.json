@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__html-to-design__import-html"
+    ]
+  }
+}
