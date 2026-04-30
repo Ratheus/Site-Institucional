@@ -298,6 +298,27 @@
   width: 100%;
 }
 
+/* NOSSO ESPAÇO */
+.espaco-diferenciais { background: var(--bg-2); }
+.espaco-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.espaco-card {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color var(--trans);
+}
+.espaco-card:hover { border-color: var(--border-hover); }
+.espaco-card h3 { color: var(--text-1); font-size: 1.5rem; }
+.espaco-card p { font-size: 0.9rem; color: var(--text-2); max-width: 40ch; }
+
 /* RESPONSIVE páginas internas */
 @media (max-width: 1024px) {
   .modalidades-grid { grid-template-columns: repeat(2, 1fr); }
@@ -312,4 +333,5 @@
   .modalidades-grid { grid-template-columns: 1fr 1fr; }
   .invest-highlights { grid-template-columns: 1fr; }
   .job-card { flex-direction: column; align-items: flex-start; }
+  .espaco-grid { grid-template-columns: 1fr; }
 }

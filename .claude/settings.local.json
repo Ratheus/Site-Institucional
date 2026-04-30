@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "mcp__html-to-design__import-html"
+      "mcp__html-to-design__import-html",
+      "mcp__figma__get_figma_data"
     ]
   }
 }
