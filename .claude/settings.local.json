@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "mcp__html-to-design__import-html",
-      "mcp__figma__get_figma_data"
+      "mcp__figma__get_figma_data",
+      "WebFetch(domain:tntfitacademia.com.br)",
+      "Bash(curl -s \"https://tntfitacademia.com.br/edgar-faco/\")",
+      "Bash(python3 -)",
+      "Bash(curl -s \"https://tntfitacademia.com.br/elisio-texeira/\")",
+      "Bash(curl -s \"https://tntfitacademia.com.br/elisio-texeira/assets/css/styles.css?v=4\")",
+      "Bash(node -e ' *)"
     ]
   }
 }

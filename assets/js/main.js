@@ -171,38 +171,58 @@
   /* ─── CARROSSEL MODALIDADES ─── */
   const carousel = document.getElementById('modCarousel');
   if (carousel) {
-    const cards   = [...carousel.querySelectorAll('.mod-card')];
-    const total   = cards.length;
-    let   active  = 0;
+    const cards = [...carousel.querySelectorAll('.mod-card')];
+    const total = cards.length;
+    let active  = 0;
+    let autoTimer;
 
     function setPositions() {
       cards.forEach((card, i) => {
         let pos = i - active;
-        /* Wrap-around mais curto */
         if (pos >  total / 2) pos -= total;
         if (pos < -total / 2) pos += total;
-        /* Clamp para ±3 */
         pos = Math.max(-3, Math.min(3, pos));
         card.dataset.pos = String(pos);
       });
     }
 
     function navigate(dir) {
+      /* Suprime transição nos cards atualmente invisíveis para evitar animação vinda de longe */
+      cards.forEach(card => {
+        if (Math.abs(parseInt(card.dataset.pos)) >= 2) card.classList.add('no-trans');
+      });
       active = ((active + dir) % total + total) % total;
       setPositions();
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        cards.forEach(card => card.classList.remove('no-trans'));
+      }));
+    }
+
+    function startAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => navigate(1), 4000);
+    }
+
+    function resetAuto() {
+      startAuto();
     }
 
     setPositions();
+    startAuto();
 
-    document.getElementById('modPrev')?.addEventListener('click', () => navigate(-1));
-    document.getElementById('modNext')?.addEventListener('click', () => navigate(1));
+    /* Pausa ao hover */
+    carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    carousel.addEventListener('mouseleave', () => startAuto());
+
+    document.getElementById('modPrev')?.addEventListener('click', () => { navigate(-1); resetAuto(); });
+    document.getElementById('modNext')?.addEventListener('click', () => { navigate(1);  resetAuto(); });
 
     /* Clique no card lateral navega até ele */
-    cards.forEach((card, i) => {
+    cards.forEach(card => {
       card.addEventListener('click', () => {
         if (card.dataset.pos !== '0') {
-          const pos = parseInt(card.dataset.pos);
-          navigate(pos > 0 ? 1 : -1);
+          navigate(parseInt(card.dataset.pos) > 0 ? 1 : -1);
+          resetAuto();
         }
       });
     });
@@ -212,9 +232,11 @@
     carousel.addEventListener('touchstart', e => { swipeStart = e.touches[0].clientX; }, { passive: true });
     carousel.addEventListener('touchend', e => {
       const diff = swipeStart - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) navigate(diff > 0 ? 1 : -1);
+      if (Math.abs(diff) > 40) { navigate(diff > 0 ? 1 : -1); resetAuto(); }
     });
   }
+
+  if (window.lucide) lucide.createIcons();
 
   /* ─── FAQ: ACCORDION ─── */
   document.querySelectorAll('.faq-question').forEach(btn => {
@@ -256,6 +278,34 @@
       card.classList.remove('video-ready');
     });
   });
+
+  /* ─── SOBRE PREVIEW — glass scroll-driven (mobile) ─── */
+  (function () {
+    const mq    = window.matchMedia('(max-width: 768px)');
+    const sec   = document.querySelector('.sobre-preview');
+    const panel = sec && sec.querySelector('.sobre-preview__content');
+    if (!sec || !panel) return;
+
+    let raf;
+    function update() {
+      if (!mq.matches) { panel.style.transform = ''; return; }
+      const rect    = sec.getBoundingClientRect();
+      const vh      = window.innerHeight;
+      /* entered: 0 quando topo da seção entra pela base da tela,
+                  1 quando topo da seção chega ao topo da tela */
+      const entered = Math.max(0, Math.min(1, (vh - rect.top) / vh));
+      /* Reveal começa a 20% e completa a 70% de "entered" */
+      const reveal  = Math.max(0, Math.min(1, (entered - 0.2) / 0.5));
+      panel.style.transform = `translateY(${((1 - reveal) * 100).toFixed(1)}%)`;
+    }
+
+    window.addEventListener('scroll', function () {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(update);
+    }, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
+  }());
 
   /* ─── ACTIVE NAV LINK ─── */
   const currentPath = window.location.pathname.replace(/\/$/, '') || '/';

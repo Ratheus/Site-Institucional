@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TNTFIT — Academia Premium em São Paulo</title>
   <meta name="description" content="Academia com equipamentos Life Fitness & Hammer Strength, todas as modalidades incluídas, 5 unidades em São Paulo. Sem fidelidade, sem restrição de horário." />
@@ -38,7 +39,9 @@
   ═══════════════════════════════════ -->
   <nav class="nav" id="nav" aria-label="Navegação principal">
     <div class="nav__inner">
-      <a href="/" class="nav__logo" aria-label="TNTFIT Home">TNTFIT</a>
+      <a href="/" class="nav__logo" aria-label="TNTFIT Home">
+        <img src="assets/img/Logo Amarelo e Branco.svg" alt="TNTFIT" />
+      </a>
 
       <ul class="nav__links" role="list">
         <li><a href="/sobre/"              class="nav__link">Sobre a TNTFIT</a></li>
@@ -139,11 +142,9 @@
 
     <div class="hero__visual" aria-hidden="true">
       <div class="hero__image-wrap">
-        <img src="https://picsum.photos/seed/tntfit-hero/900/1200"
-             alt="Interior da TNTFIT Academia"
-             class="hero__img"
-             loading="eager" />
-        <div class="hero__image-overlay"></div>
+        <video class="hero__video" autoplay muted loop playsinline preload="auto">
+          <source src="assets/video/hero.webm" type="video/webm" />
+        </video>
       </div>
     </div>
 
@@ -199,12 +200,15 @@
   <section class="diferenciais" id="diferenciais" aria-labelledby="difHead">
     <div class="container">
 
-      <div class="section-header reveal">
-        <span class="label">Por que a TNTFIT?</span>
-        <h2 id="difHead">Diferenciais que<br /><em>fazem diferença</em></h2>
-      </div>
-
       <div class="card-deck-wrap">
+
+        <!-- LEFT: label + título -->
+        <div class="card-deck-intro reveal">
+          <span class="label">Por que a TNTFIT?</span>
+          <h2 id="difHead">Por que treinar<br />na TNTFIT é<br /><em>Diferente</em></h2>
+        </div>
+
+        <!-- RIGHT: card stack com controles integrados -->
         <div class="card-deck" id="cardDeck">
 
           <article class="deck-card" data-pos="0">
@@ -251,17 +255,19 @@
             </div>
           </article>
 
+          <!-- Controles posicionados absolutamente no canto inferior do deck -->
+          <div class="deck-controls" aria-label="Controles dos cards">
+            <button class="deck-btn deck-btn--prev" id="deckPrev" aria-label="Card anterior">
+              <i class="ph ph-arrow-left" aria-hidden="true"></i>
+            </button>
+            <span class="deck-counter" id="deckCounter" aria-live="polite">1 / 4</span>
+            <button class="deck-btn deck-btn--next" id="deckNext" aria-label="Próximo card">
+              <i class="ph ph-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+
         </div>
 
-        <div class="deck-controls" aria-label="Controles dos cards">
-          <button class="deck-btn deck-btn--prev" id="deckPrev" aria-label="Card anterior">
-            <i class="ph ph-arrow-left" aria-hidden="true"></i>
-          </button>
-          <span class="deck-counter" id="deckCounter" aria-live="polite">1 / 4</span>
-          <button class="deck-btn deck-btn--next" id="deckNext" aria-label="Próximo card">
-            <i class="ph ph-arrow-right" aria-hidden="true"></i>
-          </button>
-        </div>
       </div>
 
     </div>
@@ -273,10 +279,10 @@
   ═══════════════════════════════════ -->
   <section class="modalidades" id="modalidades" aria-labelledby="modHead">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header section-header--center reveal">
         <span class="label">Modalidades</span>
         <h2 id="modHead">Treine do <em>seu jeito</em></h2>
-        <p class="modalidades__sub reveal reveal-delay-1">Musculação, funcional, aulas coletivas e mais — tudo incluso no seu plano.</p>
+        <p class="modalidades__sub reveal reveal-delay-1">Musculação, mobilidade, aulas coletivas e mais — tudo incluso no seu plano.</p>
       </div>
     </div>
 
@@ -286,66 +292,98 @@
 
         <article class="mod-card" data-pos="0" aria-label="Musculação">
           <div class="mod-card__img">
-            <img src="https://picsum.photos/seed/tntfit-mod-musc/500/700" alt="Musculação" loading="lazy" />
+            <img src="assets/img/musculacao-v3.webp" alt="Musculação" loading="lazy" />
             <div class="mod-card__overlay"></div>
           </div>
-          <span class="mod-card__name">Musculação</span>
+          <div class="mod-card__content">
+            <div class="mod-card__icon"><i data-lucide="dumbbell"></i></div>
+            <span class="mod-card__name">Musculação</span>
+            <p class="mod-card__desc">Treinamento com pesos focado em ganho de força, hipertrofia e melhora do condicionamento físico geral.</p>
+          </div>
         </article>
 
         <article class="mod-card" data-pos="1" aria-label="Funcional">
           <div class="mod-card__img">
-            <img src="https://picsum.photos/seed/tntfit-mod-func/500/700" alt="Funcional" loading="lazy" />
+            <img src="assets/img/mobilidade-v3.webp" alt="Funcional" loading="lazy" />
             <div class="mod-card__overlay"></div>
           </div>
-          <span class="mod-card__name">Funcional</span>
+          <div class="mod-card__content">
+            <div class="mod-card__icon"><i data-lucide="move"></i></div>
+            <span class="mod-card__name">Funcional</span>
+            <p class="mod-card__desc">Treinos dinâmicos com movimentos do dia a dia que desenvolvem força, agilidade, mobilidade e resistência.</p>
+          </div>
         </article>
 
         <article class="mod-card" data-pos="2" aria-label="Dança">
           <div class="mod-card__img">
-            <img src="https://picsum.photos/seed/tntfit-mod-dan/500/700" alt="Dança" loading="lazy" />
+            <img src="assets/img/danca-v3.webp" alt="Dança" loading="lazy" />
             <div class="mod-card__overlay"></div>
           </div>
-          <span class="mod-card__name">Dança</span>
+          <div class="mod-card__content">
+            <div class="mod-card__icon"><i data-lucide="music-2"></i></div>
+            <span class="mod-card__name">Dança</span>
+            <p class="mod-card__desc">Aulas coreografadas que combinam ritmos e movimentos para melhorar coordenação, queimar calorias e se divertir.</p>
+          </div>
         </article>
 
         <article class="mod-card" data-pos="-1" aria-label="Yoga">
           <div class="mod-card__img">
-            <img src="https://picsum.photos/seed/tntfit-mod-yoga/500/700" alt="Yoga" loading="lazy" />
+            <img src="assets/img/yoga-v3.webp" alt="Yoga" loading="lazy" />
             <div class="mod-card__overlay"></div>
           </div>
-          <span class="mod-card__name">Yoga</span>
+          <div class="mod-card__content">
+            <div class="mod-card__icon"><i data-lucide="person-standing"></i></div>
+            <span class="mod-card__name">Yoga</span>
+            <p class="mod-card__desc">Prática que une posturas, respiração e concentração para aumentar flexibilidade, reduzir o estresse e melhorar o equilíbrio.</p>
+          </div>
         </article>
 
         <article class="mod-card" data-pos="-2" aria-label="Step">
           <div class="mod-card__img">
-            <img src="https://picsum.photos/seed/tntfit-mod-step/500/700" alt="Step" loading="lazy" />
+            <img src="assets/img/step-v3.webp" alt="Step" loading="lazy" />
             <div class="mod-card__overlay"></div>
           </div>
-          <span class="mod-card__name">Step</span>
+          <div class="mod-card__content">
+            <div class="mod-card__icon"><i data-lucide="footprints"></i></div>
+            <span class="mod-card__name">Step</span>
+            <p class="mod-card__desc">Treino cardiovascular com subidas e descidas no step, focado em resistência, coordenação e alta queima calórica.</p>
+          </div>
         </article>
 
         <article class="mod-card" data-pos="-3" aria-label="Pilates">
           <div class="mod-card__img">
-            <img src="https://picsum.photos/seed/tntfit-mod-pil/500/700" alt="Pilates" loading="lazy" />
+            <img src="assets/img/pilates-v3.webp" alt="Pilates" loading="lazy" />
             <div class="mod-card__overlay"></div>
           </div>
-          <span class="mod-card__name">Pilates</span>
+          <div class="mod-card__content">
+            <div class="mod-card__icon"><i data-lucide="activity"></i></div>
+            <span class="mod-card__name">Pilates</span>
+            <p class="mod-card__desc">Exercícios controlados que fortalecem o core, melhoram a postura e aumentam a consciência corporal.</p>
+          </div>
         </article>
 
         <article class="mod-card" data-pos="-3" aria-label="GAP">
           <div class="mod-card__img">
-            <img src="https://picsum.photos/seed/tntfit-mod-gap/500/700" alt="GAP" loading="lazy" />
+            <img src="assets/img/gap-v3.webp" alt="GAP" loading="lazy" />
             <div class="mod-card__overlay"></div>
           </div>
-          <span class="mod-card__name">GAP</span>
+          <div class="mod-card__content">
+            <div class="mod-card__icon"><i data-lucide="zap"></i></div>
+            <span class="mod-card__name">GAP</span>
+            <p class="mod-card__desc">Aulas específicas para fortalecer glúteos, abdômen e pernas, com foco em tonificação muscular.</p>
+          </div>
         </article>
 
         <article class="mod-card" data-pos="-3" aria-label="Artes Marciais">
           <div class="mod-card__img">
-            <img src="https://picsum.photos/seed/tntfit-mod-arte/500/700" alt="Artes Marciais" loading="lazy" />
+            <img src="assets/img/artes-marciais-v3.webp" alt="Artes Marciais" loading="lazy" />
             <div class="mod-card__overlay"></div>
           </div>
-          <span class="mod-card__name">Artes Marciais</span>
+          <div class="mod-card__content">
+            <div class="mod-card__icon"><i data-lucide="shield"></i></div>
+            <span class="mod-card__name">Artes Marciais</span>
+            <p class="mod-card__desc">Treinos que combinam técnicas de luta, disciplina e condicionamento físico para melhorar força, foco e defesa pessoal.</p>
+          </div>
         </article>
 
       </div>
@@ -391,7 +429,7 @@
 
         <article class="unidade-card reveal reveal-delay-1">
           <div class="unidade-card__img">
-            <img src="https://picsum.photos/seed/tntfit-u1/600/400" alt="Unidade Elísio" loading="lazy" />
+            <img src="assets/img/elisio.webp" alt="Unidade Elísio" loading="lazy" />
           </div>
           <div class="unidade-card__body">
             <h3>Elísio</h3>
@@ -404,7 +442,7 @@
 
         <article class="unidade-card reveal reveal-delay-2">
           <div class="unidade-card__img">
-            <img src="https://picsum.photos/seed/tntfit-u2/600/400" alt="Unidade Edgar Facó" loading="lazy" />
+            <img src="assets/img/edgar-faco.webp" alt="Unidade Edgar Facó" loading="lazy" />
           </div>
           <div class="unidade-card__body">
             <h3>Edgar Facó</h3>
@@ -417,7 +455,7 @@
 
         <article class="unidade-card reveal reveal-delay-3">
           <div class="unidade-card__img">
-            <img src="https://picsum.photos/seed/tntfit-u3/600/400" alt="Unidade Parada de Taipas" loading="lazy" />
+            <img src="assets/img/parada-de-taipas.webp" alt="Unidade Parada de Taipas" loading="lazy" />
           </div>
           <div class="unidade-card__body">
             <h3>Parada de Taipas</h3>
@@ -430,7 +468,7 @@
 
         <article class="unidade-card reveal reveal-delay-4">
           <div class="unidade-card__img">
-            <img src="https://picsum.photos/seed/tntfit-u4/600/400" alt="Unidade Paula Ferreira" loading="lazy" />
+            <img src="assets/img/paula-ferreira.webp" alt="Unidade Paula Ferreira" loading="lazy" />
           </div>
           <div class="unidade-card__body">
             <h3>Paula Ferreira</h3>
@@ -443,7 +481,7 @@
 
         <article class="unidade-card reveal reveal-delay-5">
           <div class="unidade-card__img">
-            <img src="https://picsum.photos/seed/tntfit-u5/600/400" alt="CT Taipas" loading="lazy" />
+            <img src="assets/img/ct.webp" alt="CT Taipas" loading="lazy" />
           </div>
           <div class="unidade-card__body">
             <h3>CT Taipas</h3>
@@ -487,69 +525,62 @@
   ═══════════════════════════════════ -->
   <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="footer__grid">
+      <div class="footer__cols">
 
-        <div class="footer__brand">
-          <a href="/" class="footer__logo" aria-label="TNTFIT Home">TNTFIT</a>
-          <p>Academia com estrutura de alto nível, equipamentos profissionais e o ambiente certo para você evoluir todos os dias.</p>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Conheça</h4>
+          <ul role="list">
+            <li><a href="/sobre/">Sobre a TNTFIT</a></li>
+            <li><a href="/unidades/">Unidades</a></li>
+            <li><a href="/nosso-espaco/">Nosso Espaço</a></li>
+            <li><a href="/modalidades/">Modalidades</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Veja Também</h4>
+          <ul role="list">
+            <li><a href="/tntblog/">TNTBlog</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Saiba Mais</h4>
+          <ul role="list">
+            <li><a href="/trabalhe-conosco/">Trabalhe Conosco</a></li>
+            <li><a href="/seja-investidor/">Seja Investidor</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Entre em Contato</h4>
+          <a href="https://wa.me/5511917173262" class="footer__cta-btn" target="_blank" rel="noopener noreferrer">
+            Fale no WhatsApp <i class="ph ph-arrow-square-out" aria-hidden="true"></i>
+          </a>
+          <p class="footer__social-label">Nos siga nas redes sociais</p>
           <div class="footer__social">
-            <a href="https://www.instagram.com/tntfitpaulaferreira/"
-               target="_blank" rel="noopener noreferrer"
-               aria-label="Instagram TNTFIT">
-              <i class="ph ph-instagram-logo" aria-hidden="true"></i>
-            </a>
-            <a href="https://wa.me/5511917173262"
-               target="_blank" rel="noopener noreferrer"
-               aria-label="WhatsApp TNTFIT">
-              <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
-            </a>
+            <a href="https://www.instagram.com/tntfitpaulaferreira/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a>
+            <a href="https://wa.me/5511917173262" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i></a>
           </div>
         </div>
 
-        <nav class="footer__nav" aria-label="Links do rodapé">
-          <h4>Páginas</h4>
-          <ul role="list">
-            <li><a href="/">Home</a></li>
-            <li><a href="/sobre/">Sobre a TNTFIT</a></li>
-            <li><a href="/nosso-espaco/">Nosso Espaço</a></li>
-            <li><a href="/unidades/">Unidades</a></li>
-            <li><a href="/modalidades/">Modalidades</a></li>
-            <li><a href="/tntblog/">TNTBlog</a></li>
-            <li><a href="/trabalhe-conosco/">Trabalhe Conosco</a></li>
-            <li><a href="/seja-investidor/">Seja Investidor</a></li>
-            <li><a href="/faq/">FAQ</a></li>
-          </ul>
-        </nav>
-
-        <address class="footer__contact" style="font-style:normal">
-          <h4>Contato</h4>
-          <p class="footer__contact-item">
-            <i class="ph ph-phone" aria-hidden="true"></i>
-            <a href="tel:+5511917173262">(11) 9 1717-3262</a>
-          </p>
-          <p class="footer__contact-item">
-            <i class="ph ph-envelope" aria-hidden="true"></i>
-            <a href="mailto:sac@tntfit.com.br">sac@tntfit.com.br</a>
-          </p>
-          <p class="footer__contact-item">
-            <i class="ph ph-map-pin" aria-hidden="true"></i>
-            R. Maj. Quedinho, 111 — Centro, São Paulo SP
-          </p>
-          <p class="footer__contact-item" style="margin-top:0.5rem">
-            <i class="ph ph-clock" aria-hidden="true"></i>
-            Seg–Sex 24h · Sáb até 16h · Dom 9h–15h
-          </p>
-        </address>
-
       </div>
+    </div>
 
-      <div class="footer__bottom">
-        <p>© 2026 TNTFIT. Todos os direitos reservados. CNPJ: 52.024.076/0001-50</p>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© 2026 TNTFIT. Todos os direitos reservados.</p>
+        <a href="/" class="footer__bottom-logo" aria-label="TNTFIT Home">
+          <img src="assets/img/Logo Amarelo e Branco.svg" alt="TNTFIT" />
+        </a>
+        <p>CNPJ: 52.024.076/0001-50</p>
       </div>
     </div>
   </footer>
 
 
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <script src="assets/js/main.js"></script>
 
   <!-- Força material amarelo #ffff00 no diamante via model-viewer API -->
@@ -557,9 +588,9 @@
     document.getElementById('diamanteViewer').addEventListener('load', function () {
       this.model.materials.forEach(function (mat) {
         mat.pbrMetallicRoughness.setBaseColorFactor([1, 1, 0, 1]);
-        mat.setEmissiveFactor([0.8, 0.8, 0]);
+        mat.setEmissiveFactor([1, 1, 0]);
         mat.pbrMetallicRoughness.setMetallicFactor(0);
-        mat.pbrMetallicRoughness.setRoughnessFactor(0.15);
+        mat.pbrMetallicRoughness.setRoughnessFactor(0.05);
       });
     });
   </script>

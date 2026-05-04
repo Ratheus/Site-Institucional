@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seja Investidor — TNTFIT Academia</title>
   <meta name="description" content="Invista na TNTFIT e faça parte de uma rede de academias premium em São Paulo. 5 unidades, crescimento sólido e modelo comprovado." />
@@ -15,7 +16,7 @@
 <body>
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="/" class="nav__logo">TNTFIT</a>
+      <a href="/" class="nav__logo"><img src="/assets/img/Logo Amarelo e Branco.svg" alt="TNTFIT" /></a>
       <ul class="nav__links" role="list">
         <li><a href="/sobre/"             class="nav__link">Sobre a TNTFIT</a></li>
         <li><a href="/nosso-espaco/"      class="nav__link">Nosso Espaço</a></li>
@@ -107,36 +108,59 @@
     </div>
   </section>
 
-  <footer class="footer">
+    <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <a href="/" class="footer__logo">TNTFIT</a>
-          <p>Academia com estrutura de alto nível, equipamentos profissionais e o ambiente certo para você evoluir todos os dias.</p>
-          <div class="footer__social">
-            <a href="https://www.instagram.com/tntfitpaulaferreira/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
-            <a href="https://wa.me/5511917173262" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
-          </div>
-        </div>
-        <nav class="footer__nav" aria-label="Rodapé">
-          <h4>Páginas</h4>
-          <ul>
-            <li><a href="/">Home</a></li>
+      <div class="footer__cols">
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Conheça</h4>
+          <ul role="list">
             <li><a href="/sobre/">Sobre a TNTFIT</a></li>
             <li><a href="/unidades/">Unidades</a></li>
+            <li><a href="/nosso-espaco/">Nosso Espaço</a></li>
             <li><a href="/modalidades/">Modalidades</a></li>
-            <li><a href="/trabalhe-conosco/">Trabalhe Conosco</a></li>
-            <li><a href="/seja-investidor/">Seja Investidor</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Veja Também</h4>
+          <ul role="list">
+            <li><a href="/tntblog/">TNTBlog</a></li>
             <li><a href="/faq/">FAQ</a></li>
           </ul>
-        </nav>
-        <address class="footer__contact" style="font-style:normal">
-          <h4>Contato</h4>
-          <p class="footer__contact-item"><i class="ph ph-phone"></i><a href="tel:+5511917173262">(11) 9 1717-3262</a></p>
-          <p class="footer__contact-item"><i class="ph ph-envelope"></i><a href="mailto:sac@tntfit.com.br">sac@tntfit.com.br</a></p>
-        </address>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Saiba Mais</h4>
+          <ul role="list">
+            <li><a href="/trabalhe-conosco/">Trabalhe Conosco</a></li>
+            <li><a href="/seja-investidor/">Seja Investidor</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Entre em Contato</h4>
+          <a href="https://wa.me/5511917173262" class="footer__cta-btn" target="_blank" rel="noopener noreferrer">
+            Fale no WhatsApp <i class="ph ph-arrow-square-out" aria-hidden="true"></i>
+          </a>
+          <p class="footer__social-label">Nos siga nas redes sociais</p>
+          <div class="footer__social">
+            <a href="https://www.instagram.com/tntfitpaulaferreira/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a>
+            <a href="https://wa.me/5511917173262" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
       </div>
-      <div class="footer__bottom"><p>© 2026 TNTFIT. Todos os direitos reservados. CNPJ: 52.024.076/0001-50</p></div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© 2026 TNTFIT. Todos os direitos reservados.</p>
+        <a href="/" class="footer__bottom-logo" aria-label="TNTFIT Home">
+          <img src="/assets/img/Logo Amarelo e Branco.svg" alt="TNTFIT" />
+        </a>
+        <p>CNPJ: 52.024.076/0001-50</p>
+      </div>
     </div>
   </footer>
   <script src="/assets/js/main.js"></script>
