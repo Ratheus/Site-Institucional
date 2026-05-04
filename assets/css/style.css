@@ -827,6 +827,7 @@ section { padding: clamp(4rem, 8vw, 8rem) 0; }
   grid-template-columns: 1fr 1fr;
   min-height: 580px;
   overflow: hidden;
+  padding: 0;
 }
 .sobre-preview__image {
   position: relative;
@@ -1174,19 +1175,17 @@ section { padding: clamp(4rem, 8vw, 8rem) 0; }
   .hero__stat { min-width: 60px; }
   .sobre-preview {
     position: relative;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    min-height: 92svh;
-    align-items: end;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
     overflow: visible;
   }
   .sobre-preview__image {
     position: absolute;
     inset: 0;
-    height: 100%;
     overflow: hidden;
   }
-  #diamanteViewer { min-height: 92svh; }
+  #diamanteViewer { height: 100%; min-height: 300px; }
   .sobre-preview__content {
     position: relative;
     z-index: 2;

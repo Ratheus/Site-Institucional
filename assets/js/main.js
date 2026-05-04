@@ -281,10 +281,16 @@
 
   /* ─── SOBRE PREVIEW — glass scroll-driven (mobile) ─── */
   (function () {
-    const mq    = window.matchMedia('(max-width: 768px)');
-    const sec   = document.querySelector('.sobre-preview');
-    const panel = sec && sec.querySelector('.sobre-preview__content');
+    const mq     = window.matchMedia('(max-width: 768px)');
+    const sec    = document.querySelector('.sobre-preview');
+    const panel  = sec && sec.querySelector('.sobre-preview__content');
+    const viewer = document.getElementById('diamanteViewer');
     if (!sec || !panel) return;
+
+    /* Diamante mais próximo no mobile (110% → 80% de raio) */
+    if (mq.matches && viewer) {
+      viewer.setAttribute('camera-orbit', '0deg 75deg 80%');
+    }
 
     let raf;
     function update() {
@@ -294,8 +300,8 @@
       /* entered: 0 quando topo da seção entra pela base da tela,
                   1 quando topo da seção chega ao topo da tela */
       const entered = Math.max(0, Math.min(1, (vh - rect.top) / vh));
-      /* Reveal começa a 20% e completa a 70% de "entered" */
-      const reveal  = Math.max(0, Math.min(1, (entered - 0.2) / 0.5));
+      /* Reveal começa a 5% e completa a 55% de "entered" */
+      const reveal  = Math.max(0, Math.min(1, (entered - 0.05) / 0.5));
       panel.style.transform = `translateY(${((1 - reveal) * 100).toFixed(1)}%)`;
     }
 
